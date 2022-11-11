@@ -99,6 +99,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d56a5bd7ee772c6458d3ee46412c207a, type: 3}
   - {fileID: 21300000, guid: 325a7419012aacb46860eadab864bd48, type: 3}
   cardPrefab: {fileID: 1934166768995723117, guid: 12aea38c98cd08549abc0764825c1965, type: 3}
+  deckButton: {fileID: 0}
   bottomPos:
   - {fileID: 0}
   - {fileID: 0}
@@ -112,7 +113,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  tripsOnDisplay: []
   deck: []
+  discardPile: []
 --- !u!114 &7442460720770866800
 MonoBehaviour:
   m_ObjectHideFlags: 0
