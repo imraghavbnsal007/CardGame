@@ -532,6 +532,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1484579864231645306, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 1484579864231645310, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -775,6 +779,26 @@ PrefabInstance:
       propertyPath: bottomPos.Array.data[6]
       value: 
       objectReference: {fileID: 911042025}
+    - target: {fileID: 8949833679787078063, guid: 614735ed57a3a0740949cee503a863b3, type: 3}
+      propertyPath: highScorePanel
+      value: 
+      objectReference: {fileID: 2059975371}
+    - target: {fileID: 8949833679787078063, guid: 614735ed57a3a0740949cee503a863b3, type: 3}
+      propertyPath: topStacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1047946227}
+    - target: {fileID: 8949833679787078063, guid: 614735ed57a3a0740949cee503a863b3, type: 3}
+      propertyPath: topStacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 902785146}
+    - target: {fileID: 8949833679787078063, guid: 614735ed57a3a0740949cee503a863b3, type: 3}
+      propertyPath: topStacks.Array.data[2]
+      value: 
+      objectReference: {fileID: 562359321}
+    - target: {fileID: 8949833679787078063, guid: 614735ed57a3a0740949cee503a863b3, type: 3}
+      propertyPath: topStacks.Array.data[3]
+      value: 
+      objectReference: {fileID: 316225061}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 614735ed57a3a0740949cee503a863b3, type: 3}
 --- !u!1001 &9019434997311859186
