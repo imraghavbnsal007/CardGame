@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934166768995723117}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.82, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -114,7 +114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a5eb6b64e085e43b07da0620f2aa35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  top: 0
+  suit: C
+  value: 0
+  row: 0
   faceUp: 0
+  inDeckPile: 0
 --- !u!50 &64716166
 Rigidbody2D:
   serializedVersion: 4

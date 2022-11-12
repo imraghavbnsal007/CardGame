@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7442460720770866806}
   - component: {fileID: 7442460720770866807}
   - component: {fileID: 7442460720770866800}
+  - component: {fileID: 8949833679787078063}
   m_Layer: 0
   m_Name: Solitaire Game
   m_TagString: Untagged
@@ -128,3 +129,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343d9d60279b9d843a1fabccdb0c2431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot1: {fileID: 0}
+--- !u!114 &8949833679787078063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442460720770866801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecf29c93cd94ab47bd69a9d50ccbe93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topStacks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  highScorePanel: {fileID: 0}
