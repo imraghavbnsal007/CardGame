@@ -22,4 +22,17 @@ public class CardScript : MonoBehaviour
     {
         return GetComponent<SpriteRenderer>().sprite.name;
     }
+
+    public void SetSprite(Sprite newSprite)
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+    }
+
+    public void ResetCard()
+    {
+        Sprite backOfCard = GameObject.Find("DeckController").GetComponent<Deck>().GetCardBack();
+        gameObject.GetComponent<SpriteRenderer>().sprite = backOfCard;
+        cardValue = 0;
+
+    }
 }

@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Button Standbtn;
     public Button Betbtn;
 
+    public PlayingScript playerScript;
+    public PlayingScript dealerScript;
+
 
     void Start()
     {
@@ -34,7 +37,9 @@ public class GameManager : MonoBehaviour
 
     private void DealbtnClicked()
     {
-        throw new NotImplementedException();
+        GameObject.Find("Deck").GetComponent<Deck>().ShuffleCards();
+        playerScript.StartHand();
+        dealerScript.StartHand();
     }
 
     // Update is called once per frame
