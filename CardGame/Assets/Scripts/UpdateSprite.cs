@@ -12,6 +12,7 @@ public class UpdateSprite : MonoBehaviour
     private Selectable selectable;
     private Solitaire solitaire;
     private UserInput userInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +61,7 @@ public class UpdateSprite : MonoBehaviour
             }
 
         }
+
 
 
     }

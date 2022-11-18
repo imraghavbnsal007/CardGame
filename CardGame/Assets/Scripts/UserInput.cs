@@ -40,11 +40,14 @@ public class UserInput : MonoBehaviour
     }
     void GetMouseClick()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // if the left mouse button is clicked
         {
             clickCount++;
+            // we save the mouse position in world units
+            // the z position is the distance from the camera
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -10));
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            // depending on what has been clicked, we call the appropriate functions
             if (hit)
             {
                 if (hit.collider.CompareTag("Deck"))
@@ -69,7 +72,7 @@ public class UserInput : MonoBehaviour
 
     void Deck()
     {
-        print("Clicked on decked");
+        // print("Clicked on decked");
         solitaire.DealFromDeck();
         slot1 = this.gameObject;
 
@@ -77,7 +80,7 @@ public class UserInput : MonoBehaviour
 
     void Card(GameObject selected)
     {
-        print("Clicked on Card");
+        // print("Clicked on Card");
         if (!selected.GetComponent<Selectable>().faceUp)//if the card clicked on is facedown
         {
             if (!Blocked(selected)) //if the card clicked on is not blocked
@@ -231,12 +234,12 @@ public class UserInput : MonoBehaviour
                     }
                     if (card1Red == card2Red)
                     {
-                        print("not stackable");
+                        // print("not stackable");
                         return false;
                     }
                     else
                     {
-                        print("stacked");
+                        // print("stacked");
                         return true;
                     }
                 }
@@ -254,7 +257,7 @@ public class UserInput : MonoBehaviour
 
         Selectable s1 = slot1.GetComponent<Selectable>();
         Selectable s2 = selected.GetComponent<Selectable>();
-        float yOffset = 0.3f;
+        float yOffset = 0.5f;
         if (s2.top || !s2.top && s1.value == 13)
         {
             yOffset = 0;
