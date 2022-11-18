@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +12,22 @@ public class GameManager : MonoBehaviour
     public Button Hitbtn;
     public Button Standbtn;
     public Button Betbtn;
+
     public Text standBtnTxt;
+    public Text moneytxt;
+    public Text handtxt;
+    public Text bettxt;
+    public Text dealerhandtxt;
+
 
     private int standCount = 0;
 
     public PlayingScript playerScript;
     public PlayingScript dealerScript;
+
+    public GameObject hideCard; // card hiding second dealer card
+
+    int pot = 0;
 
 
     void Start()
@@ -47,9 +58,24 @@ public class GameManager : MonoBehaviour
 
     private void DealbtnClicked()
     {
+        dealerhandtxt.gameObject.SetActive(false); // hide dealer score 
         GameObject.Find("Deck").GetComponent<Deck>().ShuffleCards();
         playerScript.StartHand();
         dealerScript.StartHand();
+
+        handtxt.text = "Hand: " + playerScript.totalHandValue.ToString(); // update the hand score for the player
+        dealerhandtxt.text = "Hand: " + dealerScript.totalHandValue.ToString(); // update the hand score for the dealer
+
+        Dealbtn.gameObject.SetActive(false); // make button not always visible
+        Hitbtn.gameObject.SetActive(true);
+        Standbtn.gameObject.SetActive(true);
+        standBtnTxt.text = "Stand";
+
+        // set pot size
+        pot = 40;
+        bettxt.text = pot.ToString();
+        playerScript.AdjustMoney(-20);
+        moneytxt.text = playerScript.GetMoney().ToString();
     }
 
     private void HitDealer()

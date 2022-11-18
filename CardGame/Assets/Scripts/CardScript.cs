@@ -18,7 +18,7 @@ public class CardScript : MonoBehaviour
         cardValue = newCardValue;
     }
 
-    public string GetSpritName()
+    public string GetSpriteName()
     {
         return GetComponent<SpriteRenderer>().sprite.name;
     }

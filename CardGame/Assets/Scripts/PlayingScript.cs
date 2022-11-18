@@ -45,4 +45,36 @@ public class PlayingScript : MonoBehaviour
 
         return totalHandValue;
     }
+
+    public void CheckAce()
+    {
+        foreach(CardScript ace in aceList)
+        {
+            if (totalHandValue + 10 < 22 & ace.GetCardValue() == 1)
+            {
+                ace.SetCardValue(11);
+                totalHandValue += 10;
+
+            }
+
+            else if (totalHandValue > 21 && ace.GetCardValue() == 11)
+            {
+                ace.SetCardValue(1);
+                totalHandValue -= 10;
+
+            }
+            
+        }
+    }
+
+    public void AdjustMoney(int amount)
+    {
+        bettingMoney += amount;
+
+    }
+
+    public int GetMoney()
+    {
+        return bettingMoney;
+    }
 }
