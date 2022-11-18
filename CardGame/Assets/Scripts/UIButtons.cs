@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
@@ -17,37 +18,14 @@ public class UIButtons : MonoBehaviour
     {
         
     }
-    public void PlayAgain()
-    {
-        highScorePanel.SetActive(false);
-        ResetScene();
-    }
+   
     public void ResetScene()
     {
-        //find all cards and remove the,
-        UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
-        foreach (UpdateSprite card in cards)
-        {
-            Destroy(card.gameObject);
-            
-        }
-        //clear the top value
-        ClearTopValues();
-        //deal new cards
-        FindObjectOfType<Solitaire>().PlayCards();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        print("Button is working");
+ 
+
     }
 
-    void ClearTopValues()
-    {
-        Selectable[] selectables = FindObjectsOfType<Selectable>();
-        foreach (Selectable selectable in selectables)
-        {
-            if (selectable.CompareTag("Top"))
-            {
-                selectable.suit = null;
-                selectable.value = 0;
-            }
-            
-        }
-    }
+
 }

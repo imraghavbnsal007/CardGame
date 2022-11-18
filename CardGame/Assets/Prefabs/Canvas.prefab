@@ -696,7 +696,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1484579864231645305}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
         m_MethodName: ResetScene
         m_Mode: 1
