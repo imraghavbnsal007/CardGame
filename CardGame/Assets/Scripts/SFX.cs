@@ -6,6 +6,7 @@ public class SFX : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip flip;
+    public AudioClip shuffle;
 
     public static SFX sfxInstance;
 

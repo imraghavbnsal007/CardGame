@@ -67,7 +67,7 @@ public class Solitaire : MonoBehaviour
         }
         deck = GenerateDeck();  // generates strings with cardfaces
         Shuffle(deck);          // randomises the deck's order
-
+        SFX.sfxInstance.audioSource.PlayOneShot(SFX.sfxInstance.shuffle);
         SolitaireSort();                    // Sorts cards into their positions
         StartCoroutine(SolitaireDeal());    // Deals the card objects
         SortDeckIntoTrips();

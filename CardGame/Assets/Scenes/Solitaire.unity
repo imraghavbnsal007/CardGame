@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1201618671}
   flip: {fileID: 8300000, guid: 45d7a0f8cc173a94683dc360b972a504, type: 3}
+  shuffle: {fileID: 8300000, guid: 09fb43c235a2dbe4e8b0fa884e417e06, type: 3}
 --- !u!1 &1344731740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2320295309788333218, guid: 4b5e8de55719dac4c9ddc6cf113afb79, type: 3}
@@ -766,7 +767,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2374677419732153747, guid: 00686304a49d33f4baa1891c7252704c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00686304a49d33f4baa1891c7252704c, type: 3}
 --- !u!1001 &6994305007659273452
 PrefabInstance:
