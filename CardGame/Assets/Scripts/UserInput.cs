@@ -52,10 +52,12 @@ public class UserInput : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Deck"))
                 {
+                    SFX.sfxInstance.audioSource.PlayOneShot(SFX.sfxInstance.flip);
                     Deck();
                 }
                 else if (hit.collider.CompareTag("Card"))
                 {
+                    SFX.sfxInstance.audioSource.PlayOneShot(SFX.sfxInstance.flip);
                     Card(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("Top"))
@@ -141,6 +143,7 @@ public class UserInput : MonoBehaviour
             {
                 if (DoubleClick())
                 {
+                    AutoStack(selected);
                     //atempt auto stack
                 }
             }
