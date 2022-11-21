@@ -721,7 +721,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2374677419732153740, guid: 00686304a49d33f4baa1891c7252704c, type: 3}
       propertyPath: m_Name
-      value: AudioSource
+      value: Sound FX
       objectReference: {fileID: 0}
     - target: {fileID: 2374677419732153746, guid: 00686304a49d33f4baa1891c7252704c, type: 3}
       propertyPath: m_RootOrder
@@ -767,8 +767,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2374677419732153747, guid: 00686304a49d33f4baa1891c7252704c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00686304a49d33f4baa1891c7252704c, type: 3}
 --- !u!1001 &6994305007659273452
 PrefabInstance:

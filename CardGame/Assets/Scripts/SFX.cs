@@ -7,7 +7,8 @@ public class SFX : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip flip;
     public AudioClip shuffle;
-
+    public AudioClip thump;
+    
     public static SFX sfxInstance;
 
     private void Awake()

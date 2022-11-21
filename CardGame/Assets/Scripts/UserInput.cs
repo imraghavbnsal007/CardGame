@@ -62,10 +62,12 @@ public class UserInput : MonoBehaviour
                 }
                 else if (hit.collider.CompareTag("Top"))
                 {
+                    SFX.sfxInstance.audioSource.PlayOneShot(SFX.sfxInstance.thump);
                     Top(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("Bottom"))
                 {
+                    SFX.sfxInstance.audioSource.PlayOneShot(SFX.sfxInstance.thump);
                     Bottom(hit.collider.gameObject);
                 }
             }
