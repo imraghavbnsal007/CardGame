@@ -97,4 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37855dfc754d0324daf2aec43d91377d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScorePanel: {fileID: 0}
+  soundOnIcon: {fileID: 0}
+  soundOffIcon: {fileID: 0}

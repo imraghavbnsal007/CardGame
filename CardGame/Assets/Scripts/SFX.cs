@@ -8,7 +8,8 @@ public class SFX : MonoBehaviour
     public AudioClip flip;
     public AudioClip shuffle;
     public AudioClip thump;
-    
+    public AudioClip backgroundMusic;
+
     public static SFX sfxInstance;
 
     private void Awake()
@@ -18,8 +19,11 @@ public class SFX : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+        else { 
+            sfxInstance = this;
+            DontDestroyOnLoad(this);
+        
+        }
 
-        sfxInstance = this;
-        DontDestroyOnLoad(this);
     }
 }
