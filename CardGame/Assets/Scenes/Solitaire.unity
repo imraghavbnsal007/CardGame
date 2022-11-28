@@ -572,10 +572,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1484579864831073924, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484579864831073924, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1484579864869896388, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 1484579864869896389, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 39.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484579864869896389, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -483.14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 338b4f1a0d6f63a48aef972727ce5ca9, type: 3}
 --- !u!114 &1484579862968909134 stripped
