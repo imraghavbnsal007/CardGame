@@ -29,7 +29,6 @@ public class Deck : MonoBehaviour
             }
             cardValues[i] = number++;
         }
-        currentID = 1;
     }
 
 
@@ -46,8 +45,8 @@ public class Deck : MonoBehaviour
             int value = cardValues[i];
             cardValues[i] = cardValues[k];
             cardValues[k] = value;
-
         }
+        currentID = 1;
     }
 
     public int DealCard(CardScript cardScript)

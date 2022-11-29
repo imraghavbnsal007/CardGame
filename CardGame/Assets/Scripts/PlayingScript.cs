@@ -40,7 +40,7 @@ public class PlayingScript : MonoBehaviour
         {
             aceList.Add(hand[cardID].GetComponent<CardScript>());
         }
-        //AceCheck();
+        CheckAce();
         cardID++;
 
         return totalHandValue;
@@ -70,11 +70,24 @@ public class PlayingScript : MonoBehaviour
     public void AdjustMoney(int amount)
     {
         bettingMoney += amount;
-
     }
 
     public int GetMoney()
     {
         return bettingMoney;
     }
+
+    //hides all cards, resets the needed variables
+    public void ResetHand()
+    {
+        for(int i=0; i<hand.Length; i++)
+        {
+            hand[i].GetComponent<CardScript>().ResetCard();
+            hand[i].GetComponent<Renderer>().enabled = false;
+        }
+        cardID=0;
+        totalHandValue=0;
+        aceList= new List<CardScript>();
+    }
 }
+

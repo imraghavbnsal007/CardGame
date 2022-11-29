@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Text handtxt;
     public Text bettxt;
     public Text dealerhandtxt;
+    public Text maintxt;
 
 
     private int standCount = 0;
@@ -36,13 +37,13 @@ public class GameManager : MonoBehaviour
         Dealbtn.onClick.AddListener(() => DealbtnClicked());
         Hitbtn.onClick.AddListener(() => HitbtnClicked());
         Standbtn.onClick.AddListener(() => StandbtnClicked());
-        
+        Hitbtn.onClick.AddListener(() => betClicked());
     }
 
     private void StandbtnClicked()
     {
         standCount++;
-        if (standCount > 1) Debug.Log("end function");
+        if (standCount > 1) roundOver();
         HitDealer();
         standBtnTxt.text = "Call";
     }
@@ -50,30 +51,40 @@ public class GameManager : MonoBehaviour
     private void HitbtnClicked()
     {
 
-        if(playerScript.GetCard() <= 10)
+        if(playerScript.cardID <= 10)
         {
             playerScript.GetCard();
+            handtxt.text = "Hand: " + playerScript.totalHandValue.ToString();
+            if(playerScript.totalHandValue > 20) roundOver();
         }
     }
 
     private void DealbtnClicked()
-    {
-        dealerhandtxt.gameObject.SetActive(false); // hide dealer score 
+    {   //reset round, hide text, prep for next round
+        playerScript.ResetHand();
+        dealerScript.ResetHand();
+
+        // hide dealer score 
+        maintxt.gameObject.SetActive(false);
+        dealerhandtxt.gameObject.SetActive(false);
         GameObject.Find("Deck").GetComponent<Deck>().ShuffleCards();
         playerScript.StartHand();
         dealerScript.StartHand();
 
         handtxt.text = "Hand: " + playerScript.totalHandValue.ToString(); // update the hand score for the player
         dealerhandtxt.text = "Hand: " + dealerScript.totalHandValue.ToString(); // update the hand score for the dealer
+        //enble to hide dealer's card
+        hideCard.GetComponent<Renderer>().enabled=true;
 
-        Dealbtn.gameObject.SetActive(false); // make button not always visible
+        // make button not always visible
+        Dealbtn.gameObject.SetActive(false); 
         Hitbtn.gameObject.SetActive(true);
         Standbtn.gameObject.SetActive(true);
         standBtnTxt.text = "Stand";
 
         // set pot size
         pot = 40;
-        bettxt.text = pot.ToString();
+        bettxt.text ="Bets: €" + pot.ToString();
         playerScript.AdjustMoney(-20);
         moneytxt.text = playerScript.GetMoney().ToString();
     }
@@ -83,12 +94,70 @@ public class GameManager : MonoBehaviour
         while(dealerScript.totalHandValue < 16 && dealerScript.cardID < 10)
         {
             dealerScript.GetCard();
+            dealerhandtxt.text = "Hand: " + dealerScript.totalHandValue.ToString();
+            if(dealerScript.totalHandValue>20) roundOver();
+        }
+    } 
+
+    void roundOver() //check for a loser or a winner, so the hand is over
+    {
+         bool playerBust = playerScript.totalHandValue > 21;
+         bool dealerBust = playerScript.totalHandValue > 21;
+         bool playerWin = playerScript.totalHandValue == 21;
+         bool dealerWin = playerScript.totalHandValue == 21;
+
+         if (standCount < 2 && !playerBust && !dealerBust && !playerWin && !dealerWin) return;
+        bool roundOver = true;
+        //both loose
+        if(playerBust && dealerBust)
+        {
+            maintxt.text = "All bust: bets returned";
+            playerScript.AdjustMoney(pot/2);
+
+        }
+        // dealer wins
+        else if (playerBust || (!dealerBust && dealerScript.totalHandValue > playerScript.totalHandValue))
+        {
+            maintxt.text= "Dealer wins!";
+        }
+        //player wins
+        else if (dealerBust || dealerScript.totalHandValue < playerScript.totalHandValue)
+        {
+            maintxt.text = "Player wins!";
+            playerScript.AdjustMoney(pot);
+        }
+        //if they tie
+        else if (playerScript.totalHandValue == dealerScript.totalHandValue)
+        {
+            maintxt.text = "Push: bets returned";
+            playerScript.AdjustMoney(pot/2);
+        }
+        else 
+        {
+            roundOver=false;
+        }
+        //set the ui for the next hand/move/turn
+        if(roundOver)
+        {
+            Hitbtn.gameObject.SetActive(false);
+            Standbtn.gameObject.SetActive(false);
+            Dealbtn.gameObject.SetActive(true);
+            maintxt.gameObject.SetActive(true);
+            dealerhandtxt.gameObject.SetActive(true);
+            hideCard.GetComponent<Renderer>().enabled=false;
+            moneytxt.text ="" + playerScript.GetMoney().ToString();
+            standCount=0;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void betClicked()
     {
-        
+        Text newBet = Betbtn.GetComponentInChildren(typeof(Text)) as Text;
+        int intBet = int.Parse(newBet.text.ToString().Remove(0, 1));
+        playerScript.AdjustMoney(-intBet);
+        moneytxt.text ="€" + playerScript.GetMoney().ToString();
+        pot +=(intBet*2);
+        bettxt.text ="Bets: €" + pot.ToString();
     }
+
 }
