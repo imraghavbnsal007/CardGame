@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         Dealbtn.onClick.AddListener(() => DealbtnClicked());
         Hitbtn.onClick.AddListener(() => HitbtnClicked());
         Standbtn.onClick.AddListener(() => StandbtnClicked());
-        Hitbtn.onClick.AddListener(() => betClicked());
+        Betbtn.onClick.AddListener(() => betClicked());
     }
 
     private void StandbtnClicked()
@@ -102,18 +102,18 @@ public class GameManager : MonoBehaviour
     void roundOver() //check for a loser or a winner, so the hand is over
     {
          bool playerBust = playerScript.totalHandValue > 21;
-         bool dealerBust = playerScript.totalHandValue > 21;
+         bool dealerBust = dealerScript.totalHandValue > 21;
          bool playerWin = playerScript.totalHandValue == 21;
-         bool dealerWin = playerScript.totalHandValue == 21;
+         bool dealerWin = dealerScript.totalHandValue == 21;
 
          if (standCount < 2 && !playerBust && !dealerBust && !playerWin && !dealerWin) return;
         bool roundOver = true;
         //both loose
+        
         if(playerBust && dealerBust)
         {
             maintxt.text = "All bust: bets returned";
             playerScript.AdjustMoney(pot/2);
-
         }
         // dealer wins
         else if (playerBust || (!dealerBust && dealerScript.totalHandValue > playerScript.totalHandValue))
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
     void betClicked()
     {
         Text newBet = Betbtn.GetComponentInChildren(typeof(Text)) as Text;
-        int intBet = int.Parse(newBet.text.ToString().Remove(0, 1));
+        int intBet=10;
         playerScript.AdjustMoney(-intBet);
         moneytxt.text ="€" + playerScript.GetMoney().ToString();
         pot +=(intBet*2);
