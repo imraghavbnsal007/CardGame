@@ -89,5 +89,7 @@ public class PlayingScript : MonoBehaviour
         totalHandValue=0;
         aceList= new List<CardScript>();
     }
+
+
 }
 

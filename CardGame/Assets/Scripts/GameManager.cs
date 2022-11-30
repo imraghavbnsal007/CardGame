@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Button Hitbtn;
     public Button Standbtn;
     public Button Betbtn;
+    public Button Resetbtn;
 
     public Text standBtnTxt;
     public Text moneytxt;
@@ -33,8 +35,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject hideCard; // card hiding second dealer card
 
+
     int pot = 0;
 
+
+    public GameObject[] hitCards;
 
     void Start()
     {
@@ -43,9 +48,26 @@ public class GameManager : MonoBehaviour
         Hitbtn.onClick.AddListener(() => HitbtnClicked());
         Standbtn.onClick.AddListener(() => StandbtnClicked());
         Betbtn.onClick.AddListener(() => betClicked());
+        Resetbtn.onClick.AddListener(() => ResetGame());
 
         panel.gameObject.SetActive(false);
 
+
+        // don't show hit cards on start
+        /*hitCards = GameObject.FindGameObjectsWithTag("hit");
+
+        foreach (GameObject i in hitCards)
+            {
+              i.gameObject.SetActive(false);
+            }
+        */
+
+    }
+
+    private void ResetGame()
+    {
+        audioclick.Play();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void StandbtnClicked()
@@ -62,6 +84,7 @@ public class GameManager : MonoBehaviour
     {
 
         audiocards.Play();
+   
 
         if (playerScript.cardID <= 10)
         {
