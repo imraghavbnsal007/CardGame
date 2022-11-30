@@ -20,8 +20,11 @@ public class GameManager : MonoBehaviour
     public Text dealerhandtxt;
     public Text maintxt;
 
+    public RectTransform panel;
+
     public AudioSource audiocards;
     public AudioSource audiobutton;
+    public AudioSource audioclick;
 
     private int standCount = 0;
 
@@ -41,10 +44,14 @@ public class GameManager : MonoBehaviour
         Standbtn.onClick.AddListener(() => StandbtnClicked());
         Betbtn.onClick.AddListener(() => betClicked());
 
+        panel.gameObject.SetActive(false);
+
     }
 
     private void StandbtnClicked()
     {
+        audioclick.Play();
+
         standCount++;
         if (standCount > 1) roundOver();
         HitDealer();
@@ -74,7 +81,7 @@ public class GameManager : MonoBehaviour
         dealerScript.ResetHand();
 
         // hide dealer score 
-        maintxt.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
         dealerhandtxt.gameObject.SetActive(false);
         GameObject.Find("Deck").GetComponent<Deck>().ShuffleCards();
         playerScript.StartHand();
@@ -121,23 +128,27 @@ public class GameManager : MonoBehaviour
         
         if(playerBust && dealerBust)
         {
+            panel.gameObject.SetActive(true);
             maintxt.text = "All bust: bets returned";
             playerScript.AdjustMoney(pot/2);
         }
         // dealer wins
         else if (playerBust || (!dealerBust && dealerScript.totalHandValue > playerScript.totalHandValue))
         {
+            panel.gameObject.SetActive(true);
             maintxt.text= "Dealer wins!";
         }
         //player wins
         else if (dealerBust || dealerScript.totalHandValue < playerScript.totalHandValue)
         {
+            panel.gameObject.SetActive(true);
             maintxt.text = "Player wins!";
             playerScript.AdjustMoney(pot);
         }
         //if they tie
         else if (playerScript.totalHandValue == dealerScript.totalHandValue)
         {
+            panel.gameObject.SetActive(true);
             maintxt.text = "Push: bets returned";
             playerScript.AdjustMoney(pot/2);
         }
