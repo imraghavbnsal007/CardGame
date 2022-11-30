@@ -53,6 +53,11 @@ MonoBehaviour:
   handtxt: {fileID: 0}
   bettxt: {fileID: 0}
   dealerhandtxt: {fileID: 0}
+  maintxt: {fileID: 0}
+  panel: {fileID: 0}
+  audiocards: {fileID: 0}
+  audiobutton: {fileID: 0}
+  audioclick: {fileID: 0}
   playerScript: {fileID: 0}
   dealerScript: {fileID: 0}
   hideCard: {fileID: 0}
