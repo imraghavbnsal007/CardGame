@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public Text dealerhandtxt;
     public Text maintxt;
 
+    public AudioSource audiocards;
+    public AudioSource audiobutton;
 
     private int standCount = 0;
 
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         Hitbtn.onClick.AddListener(() => HitbtnClicked());
         Standbtn.onClick.AddListener(() => StandbtnClicked());
         Betbtn.onClick.AddListener(() => betClicked());
+
     }
 
     private void StandbtnClicked()
@@ -51,7 +54,9 @@ public class GameManager : MonoBehaviour
     private void HitbtnClicked()
     {
 
-        if(playerScript.cardID <= 10)
+        audiocards.Play();
+
+        if (playerScript.cardID <= 10)
         {
             playerScript.GetCard();
             handtxt.text = "Hand: " + playerScript.totalHandValue.ToString();
@@ -60,7 +65,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void DealbtnClicked()
-    {   //reset round, hide text, prep for next round
+    {
+        // sounds
+        audiocards.Play();
+        
+        //reset round, hide text, prep for next round
         playerScript.ResetHand();
         dealerScript.ResetHand();
 
@@ -152,6 +161,9 @@ public class GameManager : MonoBehaviour
 
     void betClicked()
     {
+
+        audiobutton.Play();
+
         Text newBet = Betbtn.GetComponentInChildren(typeof(Text)) as Text;
         int intBet=10;
         playerScript.AdjustMoney(-intBet);
