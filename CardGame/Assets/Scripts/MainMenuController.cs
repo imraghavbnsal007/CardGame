@@ -8,5 +8,9 @@ public class MainMenuController : MonoBehaviour
     public void PlayGame(){
         SceneManager.LoadScene("Solitaire");
     }
+
+    public void ExitGame(){
+        SceneManager.LoadScene("MainMenu");
+    }
     
 }
