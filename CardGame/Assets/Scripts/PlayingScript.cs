@@ -9,7 +9,7 @@ public class PlayingScript : MonoBehaviour
 {
 
     public CardScript cardScript;
-    public Deck deckScript;
+    public Deck_Blackjack deckScript;
 
     public int totalHandValue = 0;
 

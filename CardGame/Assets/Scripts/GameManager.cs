@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         // hide dealer score 
         panel.gameObject.SetActive(false);
         dealerhandtxt.gameObject.SetActive(false);
-        GameObject.Find("Deck").GetComponent<Deck>().ShuffleCards();
+        GameObject.Find("Deck_Blackjack").GetComponent<Deck_Blackjack>().ShuffleCards();
         playerScript.StartHand();
         dealerScript.StartHand();
 
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
         pot = 40;
         bettxt.text ="Bets: €" + pot.ToString();
         playerScript.AdjustMoney(-20);
-        moneytxt.text = playerScript.GetMoney().ToString();
+        moneytxt.text = playerScript.GetMoney().ToString() + "€";
     }
 
     private void HitDealer()
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
             maintxt.gameObject.SetActive(true);
             dealerhandtxt.gameObject.SetActive(true);
             hideCard.GetComponent<Renderer>().enabled=false;
-            moneytxt.text ="" + playerScript.GetMoney().ToString();
+            moneytxt.text =playerScript.GetMoney().ToString() + "€";
             standCount=0;
         }
     }
@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
         Text newBet = Betbtn.GetComponentInChildren(typeof(Text)) as Text;
         int intBet=10;
         playerScript.AdjustMoney(-intBet);
-        moneytxt.text ="€" + playerScript.GetMoney().ToString();
+        moneytxt.text =playerScript.GetMoney().ToString() + "€";
         pot +=(intBet*2);
         bettxt.text ="Bets: €" + pot.ToString();
     }

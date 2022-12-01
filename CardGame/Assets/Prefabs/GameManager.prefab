@@ -48,6 +48,7 @@ MonoBehaviour:
   Hitbtn: {fileID: 0}
   Standbtn: {fileID: 0}
   Betbtn: {fileID: 0}
+  Resetbtn: {fileID: 0}
   standBtnTxt: {fileID: 0}
   moneytxt: {fileID: 0}
   handtxt: {fileID: 0}
@@ -61,3 +62,4 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   dealerScript: {fileID: 0}
   hideCard: {fileID: 0}
+  hitCards: []
