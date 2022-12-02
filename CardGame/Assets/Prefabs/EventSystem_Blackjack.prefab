@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8439524183187683244}
   - component: {fileID: 8439524183187683235}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: EventSystem_Blackjack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

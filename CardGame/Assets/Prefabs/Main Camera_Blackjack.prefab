@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3225737830297831335}
   - component: {fileID: 3225737830297831328}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera_Blackjack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -620,7 +620,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8439524183187683234, guid: 5a92cc72f6c9a894eb62f5fd256aa9ca, type: 3}
       propertyPath: m_Name
-      value: EventSystem
+      value: EventSystem_Blackjack
       objectReference: {fileID: 0}
     - target: {fileID: 8439524183187683245, guid: 5a92cc72f6c9a894eb62f5fd256aa9ca, type: 3}
       propertyPath: m_RootOrder
@@ -839,7 +839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3225737830297831329, guid: 3b5b8681b19bde9408fc9384f8e34ee9, type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: Main Camera_Blackjack
       objectReference: {fileID: 0}
     - target: {fileID: 3225737830297831334, guid: 3b5b8681b19bde9408fc9384f8e34ee9, type: 3}
       propertyPath: m_RootOrder
@@ -1044,8 +1044,16 @@ PrefabInstance:
       value: Foreground
       objectReference: {fileID: 0}
     - target: {fileID: 8004126746775953732, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -340.06006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004126746775953732, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -354.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820865939341985475, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -526.9602
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
