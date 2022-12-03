@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1550303242}
   - component: {fileID: 1550303241}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main_Menu Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 1876116549}
   - component: {fileID: 1876116548}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: EventSystem_Main menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651134544184960131, guid: ba188e5f1420a5f41b6b71fb4184913e, type: 3}
       propertyPath: m_Name
-      value: MainMenu Controller
+      value: MainMenu_Controller1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba188e5f1420a5f41b6b71fb4184913e, type: 3}
