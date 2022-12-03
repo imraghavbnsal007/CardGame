@@ -149,7 +149,7 @@ MonoBehaviour:
   top: 0
   suit: 
   value: 0
-  row: 6
+  row: 5
   faceUp: 0
   inDeckPile: 0
 --- !u!1 &2320295308272851735
@@ -301,7 +301,7 @@ MonoBehaviour:
   top: 0
   suit: 
   value: 0
-  row: 4
+  row: 3
   faceUp: 0
   inDeckPile: 0
 --- !u!1 &2320295308362220269
@@ -453,7 +453,7 @@ MonoBehaviour:
   top: 0
   suit: 
   value: 0
-  row: 3
+  row: 2
   faceUp: 0
   inDeckPile: 0
 --- !u!1 &2320295308436336343
@@ -643,7 +643,7 @@ MonoBehaviour:
   top: 0
   suit: 
   value: 0
-  row: 2
+  row: 1
   faceUp: 0
   inDeckPile: 0
 --- !u!1 &2320295309240877095
@@ -795,7 +795,7 @@ MonoBehaviour:
   top: 0
   suit: 
   value: 0
-  row: 1
+  row: 0
   faceUp: 0
   inDeckPile: 0
 --- !u!1 &2320295309788333218
@@ -947,7 +947,7 @@ MonoBehaviour:
   top: 0
   suit: 
   value: 0
-  row: 5
+  row: 4
   faceUp: 0
   inDeckPile: 0
 --- !u!1 &2320295309821707885
@@ -1099,6 +1099,6 @@ MonoBehaviour:
   top: 0
   suit: 
   value: 0
-  row: 7
+  row: 6
   faceUp: 0
   inDeckPile: 0

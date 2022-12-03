@@ -224,11 +224,20 @@ public class UserInput : MonoBehaviour
             }
             else
             {
+                // test if the selected card has any children, if not the card is valid
+                if (!HasNoChildren(selected)) 
+                { 
+                    //print("occupied"); 
+                    return false;
+                }
+
+                // checks if selected card has a value less than slot1's
                 if (s1.value == s2.value - 1)
                 {
                     bool card1Red = true;
                     bool card2Red = true;
 
+                    // checks if cards are red
                     if (s1.suit == "C" || s1.suit == "S")
                     {
                         card1Red = false;
@@ -237,6 +246,8 @@ public class UserInput : MonoBehaviour
                     {
                         card2Red = false;
                     }
+
+                    // checks if cards are of different colour or not
                     if (card1Red == card2Red)
                     {
                         // print("not stackable");
@@ -255,6 +266,7 @@ public class UserInput : MonoBehaviour
 
         return false;
     }
+
     void Stack(GameObject selected)
     {
         //if on top of king or empty bottom stack the cards in place
@@ -334,11 +346,12 @@ public class UserInput : MonoBehaviour
             }
         }
     }
+
     bool DoubleClick()
     {
         if (timer < doubleClickTime && clickCount == 2)
         {
-            print("Double click");
+            // print("Double click");
             return true;
         }
         else
