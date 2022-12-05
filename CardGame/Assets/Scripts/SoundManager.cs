@@ -10,22 +10,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField] Image soundOffIcon;
     private bool muted = false;
 
-    static SoundManager soundMan = null;
-
-    private void Awake()
-    {
-        if (soundMan != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            soundMan = this;
-            GameObject.DontDestroyOnLoad(gameObject);
-
-        }
-
-    }
 
     void Start()
     {
