@@ -951,6 +951,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 720984443, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 720984443, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 720984443, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2651134544184960130, guid: ba188e5f1420a5f41b6b71fb4184913e, type: 3}
+    - target: {fileID: 720984443, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 720984443, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 720984443, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 720984443, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8004126745767881426, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1042,6 +1070,14 @@ PrefabInstance:
     - target: {fileID: 8004126745767881431, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
       propertyPath: m_Name
       value: Foreground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004126746420635732, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -550
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004126746420635732, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -366
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de370b5a4b7afde48a8719ef795bb95c, type: 3}
