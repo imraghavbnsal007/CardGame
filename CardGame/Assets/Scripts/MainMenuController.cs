@@ -15,5 +15,8 @@ public class MainMenuController : MonoBehaviour
     public void SecondGame(){
         SceneManager.LoadScene("Spider");
     }
+    public void QuitGame(){
+        Application.Quit();
+    }
     
 }

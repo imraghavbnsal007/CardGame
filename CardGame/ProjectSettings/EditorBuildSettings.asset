@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Solitaire.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d94c96335ea64db49b5ad53dd6c17efb
+  - enabled: 1
+    path: Assets/Scenes/Solitaire.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Spider.unity
     guid: 50ac0a89a157d5046b8f889fe6588a6b
